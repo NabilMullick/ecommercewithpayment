@@ -10,4 +10,13 @@ export default defineConfig({
       },
     }),
   ],
+  test: {
+    globals: true,
+    environment: "jsdom", // ✅ Use "jsdom" for React tests
+    setupFiles: "./vitest.setup.js", // Optional: Use if you need Firebase/Auth mocks
+    coverage: {
+      provider: "c8",
+      reporter: ["text", "json", "html"]
+    }
+  }
 });
